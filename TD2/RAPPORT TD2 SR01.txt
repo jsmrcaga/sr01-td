@@ -1,9 +1,90 @@
 RAPPORT TD2 SR01
 
 Exercices:
--
--
--
--
--
+- Exercice 1 : sizeof();
+- Exercice 2 : Definition de Constantes et introduction aux tableaux
+- Exercice 3 : Introduction aux Structures et Fonctions Typees par l'utilisateur
+- Exercice 4 : Utilisation de union/enum et typedef
+- Exercice 5 : Tableau de type defini par l'utilisateur
 
+Introduction:
+
+	Ce TP est consiste a nous familiariser avec les structures presentes dans
+le lagage C: struct/enum/union. 
+Ainsi, les exercices avancent peu a peu pour finir en combinant toutes les
+nouveautes apprises, l'utilisation de tableaux types par l'utilisateur, 
+l'utilisation de structures dans les parametres des fonctions et des fonctions 
+typees par l'utilisateur.
+
+Exercices:
+
+1:	
+	Le premier exercice nous familiarise avec la fonction sizeof() qui permet
+de trouver la taille memoire d'une variable ou un type
+
+Ex:
+	int var;
+
+	sizeof( int ); 
+	sizeof(var);
+	//equivalents
+
+	Cette fonction peut, de meme, multiplier cette taille pour nous donner 
+directement la taille de plusieurs variables du meme type, ce qui sera utile
+par la suite pour pouvoir reserver des emplacements memoire.
+
+2:
+	
+	Le deuxieme exercice nous permet de declarer des constantes grace au mot cle #define, qui 
+definit la constante avant compilation, ce qui permet de garder de la memoire, et de faciliter
+le code, en permettant une modification directe au niveau du #define.
+	Cet exercice nous introduit aussi a la declaration de tableaux:
+	
+	type nom[taille];
+
+	Et leur utilisation (dans ce cas une affectation avec une boucle for et l'affichage de toutes
+ses valeur de la meme facon)
+
+3:
+	
+	Cet exercice nous permet de nous familiariser avec les struct, en definissant une structure "complexe"
+qui possede deux membres, x et y, pour modeliser un nombre complexe.
+	Une structure est un ensemble de variables groupees, qui permettent au developpeur de 
+modeliser des objets. Ainsi on peut, dans une variable, inserer des types differents:
+
+struct exemple{
+	int ex1;
+	float ex2;
+	char ex3;	
+
+}
+
+Ainsi on definit la structure, et aussi une foction typee "complexe" qui retourne la somme de deux
+nombres complexes (complexe Somme (complexe, complexe);).
+	Afin de retourner le type complexe a la fonction Somme, il est necessaire de creer une variable
+de passage a l'interieur de la fonction. 
+	
+		complexe temp;
+		...
+		return temp;
+
+4:
+	L'exercice 4 nous introduit aux enum, et union.
+	Un enum est une declaration de variable qui restreint les valeurs que cette variable peut
+prendre.
+	Ex: enum exemple {VAL1, VAL2, VAL3};
+	
+	Une union est un groupe de variables, qui ressemble a une structure, mais qui reserve la memoire
+du plus grand type qu'il inclut, et ne peut contenir qu'une seule valeur, mais de n'importe quel des
+types qu'elle contient.
+	Ex:
+		union U{
+			int i;
+			float f;
+		}
+
+5:
+	L'exercice 5 est la mise en oeuvre dans un cas reel de toutes les structures vues dans le TD,
+	On utilise des boucles for pour affecter chaque case du tableau sr01 a chaque etudiant saisi.
+	Et on saisit chaque etudiant grace a une fonction typee "Etudiant" qui est definie a partir
+	d'une structure "Etudiant", qui contient le nom, prenom, et login SR01 de chaque etudiant.
