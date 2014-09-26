@@ -25,8 +25,10 @@ void main(){
 }
 
 void Afficher(complexe nComplexe){
+	float temp;
+	temp = - nComplexe.y;
 	if(nComplexe.y < 0){
-		printf("%g - %gi\n", nComplexe.x, nComplexe.y);
+		printf("%g - %gi\n", nComplexe.x, temp);
 	}else if (nComplexe.y ==0 ){
 		printf("%g\n", nComplexe.x);
 	}else if(nComplexe.y > 0){
