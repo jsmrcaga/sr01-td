@@ -8,4 +8,9 @@ void main(){
 	printf("Float: %d\n", sizeof(float));
 	printf("Double: %d\n", sizeof(double));
 	printf("long double: %d\n", sizeof(long double));
+	printf("\n");
+	printf("Test de multiplication avec var (int x)");
+	int x;
+	printf("4*sizeof x: %d\n", 4 * sizeof(x));
+	printf("sizeof 4*x: %d\n", sizeof(4 * x));
 }

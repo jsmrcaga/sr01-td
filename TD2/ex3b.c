@@ -21,16 +21,17 @@ void main(){
 	q.x=2;
 	q.y=24;
 
-	// Somme(p,q);
-
-	Afficher(p);
+	Afficher(Somme(p,q));
+	Afficher(Produit(p,q));
+	
 
 	
 }
 
 void Afficher(complexe nComplexe){
 	if(nComplexe.y < 0){
-		printf("%g - %gi\n", nComplexe.x, nComplexe.y);
+		float temp = - nComplexe.y;
+		printf("%g - %gi\n", nComplexe.x, temp);
 	}else if (nComplexe.y ==0 ){
 		printf("%g\n", nComplexe.x);
 	}else if(nComplexe.y > 0){
@@ -41,7 +42,10 @@ void Afficher(complexe nComplexe){
 }
 
 complexe Somme(complexe comp1, complexe comp2){
-	
+	complexe var;
+			var.x=comp1.x + comp2.x;
+			var.y=comp1.y + comp2.y;
+	return var;
 		// Somme.x = comp1.x + comp2.x;
 		// Somme.y = comp1.y + comp2.y;
 
@@ -50,5 +54,8 @@ complexe Somme(complexe comp1, complexe comp2){
 
 complexe Produit(complexe comp1, complexe comp2){
 	 // (x + yi) * (u + vi) = (x*u - y*v) + (y*u + x*v)i
-
+	complexe var;
+		var.x = ((comp1.x * comp2.x) - (comp1.y * comp2.y));
+		var.y = ((comp1.y * comp2.x) - (comp1.x * comp2.y));
+	return var;
 }

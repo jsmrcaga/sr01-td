@@ -37,6 +37,12 @@ void Afficher(complexe nComplexe){
 }
 
 complexe Somme(complexe comp1, complexe comp2){
+	complexe var;
+			var.x=comp1.x + comp2.x;
+			var.y=comp1.y + comp2.y;
+	return var;
+		// Somme.x = comp1.x + comp2.x;
+		// Somme.y = comp1.y + comp2.y;
 
-
+		
 }

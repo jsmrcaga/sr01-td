@@ -1,3 +1,6 @@
+//EXERCICE TRES IMPORTANT
+//A REVOIR
+
 #include <stdio.h>
 
 	typedef struct{
@@ -11,44 +14,65 @@
 		complexe uComplexe;
 	};
 
-	typedef enum {ENTIER, REEL, COMPLEXE} genre;
+	enum genre {ENTIER, REEL, COMPLEXE};
 
-	typedef struct {
-		enum genre ;
-		union valeur;
+
+	typedef struct nombre{
+		enum genre type;
+		union valeur valeur;
 	}nombre;
 
-void Saisir_Nombre();
+nombre Saisir_Nombre();
+void Afficher_Nombre(nombre);
 
 void main(){
-
-
+	nombre poulet = Saisir_Nombre();
+	Afficher_Nombre(poulet);
 }
 
-void Saisir_Nombre(valeur *Val){
+nombre Saisir_Nombre(){
 	char choix;
-
+	nombre temp;
 	printf("Voulez-vous choisir un entier(i), un reel (r) ou un complexe(c)?\n");
-	scanf("%c", choix);
+	scanf("%c", &choix);
 
 	switch(choix){
 		case 'i':
+			temp.type = ENTIER;
 			printf("Entrez l'entier: ");
-			scanf("%d", &Val.entier);
+			scanf("%d", &temp.valeur.entier);
 			break;
 		
 		case 'r':
+			temp.type = REEL;
 			printf("Entrez le reel: ");
-			scanf("%f", &Val.reel);
+			scanf("%f", &temp.valeur.reel);
 			break;
 		
 		case 'c':
+			temp.type = COMPLEXE;
 			printf("Entrez le complexe X: ");
-			scanf("%d", &Val.uComplexe.x);
+			scanf("%f", &temp.valeur.uComplexe.x);
 			printf("Entrez le complexe Y: ");
-			scanf("%d", &Val.uComplexe.y);
+			scanf("%f", &temp.valeur.uComplexe.y);
 			break;
 
 	}
+	return temp;
 }
 
+
+void Afficher_Nombre(nombre nB){
+
+	if(nB.type==ENTIER){
+		printf("Le nombre est un entier: %d\n", nB.valeur.entier);
+	}else if(nB.type==REEL){
+		printf("Le nombre est un reel: %g\n", nB.valeur.reel);
+	}else if(nB.type==COMPLEXE){
+		printf("Le nombre est un complexe de Re: %g\n", nB.valeur.uComplexe.x);
+		printf("Le nombre est un complexe de Im: %g\n", nB.valeur.uComplexe.y);
+	}else{
+		printf("Erreur");
+	}
+
+}
