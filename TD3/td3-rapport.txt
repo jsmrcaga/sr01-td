@@ -1,0 +1,40 @@
+RAPPORT TD3 SR01
+
+Lors de ce TD on va manipuler des pointeurs, les tableaux, et les entrees et sorties du programme.
+Exercice 1 :
+Exercice 2 :
+Exercice 3 :
+Exercice 4 : 
+
+
+
+
+
+Exercice 4:
+	Programme 1: x=40
+		Puisque les operations se font de droite a gauche, d'ou Z=4 ==> Y=4 et X *= 4 (4*10)
+
+	Programme 2: x = 1
+		Puisque OR (||) a un ordre de priorite inferieur, il est donc traite avant le AND (&&), d'ou ((X AND Y) OR 0) = 1 
+
+	Programme 3: x=3 y=2 z=0
+
+
+
+	Programme 4: x=4 z=1
+		Z= x /++x; Et Puisque "/" a un ordre de priorite inferieur il est traite apres ++, on a donc x++=4 et 4/4 
+
+	Programme 5: a=3 b=1
+		BINAIRE
+
+	Programme 6: a=-1 y=-8
+		Complement a 2, a=-1. 
+		
+
+	Programme 7: x=3 y-3 a=2
+		On utilise l'operateur ternaire ?:, on a donc SI x<y x++ sinon y++. x=3 et y=2, donc x<y faux, donc
+		a = y++. On a donc a=y et y++, d'ou a =2 et y=3
+
+	Programme 8: y=-1 a=0
+		On a a = ++x && ++y || ++z; d'ou a = (x AND y) OR z et ensuite les affectations ++. D'ou (-1 AND -1) = 0
+		(0 OR -1) = 0. D'ou a = 0. y=-1
